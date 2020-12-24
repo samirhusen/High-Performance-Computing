@@ -32,9 +32,6 @@ typedef struct CrackPasswordArgs{
 	char stop;
 } CrackPasswordArgs_t;
 
-/**
- Required by lack of standard function in C.   
- */
 
 void substr(char *dest, char *src, int start, int length){
 	memcpy(dest, src + start, length);

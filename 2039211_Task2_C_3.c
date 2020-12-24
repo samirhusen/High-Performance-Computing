@@ -25,10 +25,6 @@
 
 int count = 0;     // A counter used to track the number of combinations explored so far
 
-/**
- Required by lack of standard function in C.   
- */
-
 void substr(char *dest, char *src, int start, int length){
 	memcpy(dest, src + start, length);
 	*(dest + length) = '\0';

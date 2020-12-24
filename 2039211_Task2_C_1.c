@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <crypt.h>
 #include <unistd.h>
-
 #include "config.h"
 #include "time.h"
 #include <math.h>
@@ -55,7 +54,7 @@ void crack(char *salt_and_encrypted){
 	}
 }
 
-//
+
 int main(int argc, char *argv[]){
 
 	// SH75 encrypted form
