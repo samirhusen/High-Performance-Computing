@@ -15,7 +15,7 @@
 
   Compile with:
   
-  	cc CrackSAM62.c -lm -lcrypt -lpthread -o CrackSAM62
+  	cc Crack_SAM62.c -lm -lcrypt -lpthread -o Crack_SAM62
 
   To run:
 	

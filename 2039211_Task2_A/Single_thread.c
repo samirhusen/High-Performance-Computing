@@ -1,15 +1,19 @@
 /************************************************************************************
 
-  The program below implements is the imrpved version of matrix multiplication using single thread
+  The program below implements matrix multiplication using single thread
   
-  SINGLE THREAD MATRIX MULTIPLICATION IMPROVED 
-  
-  Samir Husen - 2020 Dec 23
+  SINGLE THREAD MATRIX MULTIPLICATION
   
   To compile this program:
 
-  cc Single_thread Utils.c -lm -o Single_thread
+  	cc Single_thread.c matrix_utils.c -lm -lpthread -o Single_thread 
 
+  To run:
+	
+	./Single_thread 
+  
+  Samir Husen - 2020 Dec 23
+  
 
 *************************************************************************************/
 
@@ -17,14 +21,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+
 #include "config.h"
 #include "matrix_utils.h"
 
 #define DIVIDE_SPLIT_LEVEL 7
 
-void single_thread_matrix(float** A, float** B, int n, int p, int m, float** C)
+void single_threaded_matrix_multiplication(float** A, float** B, int n, int p, int m, float** C)
 {
-	// Here N, P and M are powers of 2
+	// Assuming n, p and m are powers of 2
 	int side_length = pow(2, DIVIDE_SPLIT_LEVEL);
 	if(n == side_length && p == side_length && m == side_length)
 	{
@@ -132,9 +137,9 @@ void single_thread_matrix(float** A, float** B, int n, int p, int m, float** C)
 	}
 }
 
+
 int main(int argc, char** argv)
 {
-
 	//A[N][P] * B[P][M] = C[N][M]
 
 	printf("SINGLE THREAD MATRIX MULTIPLICATION\n");
@@ -153,7 +158,7 @@ int main(int argc, char** argv)
 	for(int i = 0; i < MATRIX_MULTIPLICATION_TEST_COUNT; i++)
 	{
 		clock_gettime(CLOCK_REALTIME, &start);
-		single_thread_matrix(A, B, N, P, M, C);
+		single_threaded_matrix_multiplication(A, B, N, P, M, C);
 		clock_gettime(CLOCK_REALTIME, &finish);
 
 		long seconds = finish.tv_sec - start.tv_sec;
@@ -182,7 +187,7 @@ int main(int argc, char** argv)
 
 	variance_time = sqrt(total_square_time / MATRIX_MULTIPLICATION_TEST_COUNT);
 	
-	//Average time
+	//average time
 	printf("\n Average time %5.3f +/- %5.3f seconds \n", average_time, variance_time);
 
 #ifdef PRINT_RESULT

@@ -5,7 +5,7 @@ The main function below show how we can simulate the process of producing the C 
 
 To compile this file:
 
-	cc Task1_5.c -o Task1.5
+	cc Task1_5.c -o Task1_5
 
 Samir Husen - 2020 Dec 20
 

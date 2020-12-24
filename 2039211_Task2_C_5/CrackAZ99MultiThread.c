@@ -16,7 +16,7 @@
 
   Compile with:
   
-  	CrackAZ99MultiThread.c -lm -lcrypt -lpthread -o CrackAZ99MultiThread
+  	cc CrackAZ99MultiThread.c -lm -lcrypt -lpthread -o CrackAZ99MultiThread
 
   To run:
 	./CrackAZ99MultiThread
