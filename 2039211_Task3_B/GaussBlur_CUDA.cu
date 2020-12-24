@@ -1,16 +1,18 @@
 /************************************************************************************
 
   The program below uses gaussain matrix to blur the image 
-  
-  Samir Husen - 2020 Dec 24
+ 
   
   To complile the program:
   
-  nvcc GaussBlur_CUDA.cu lodepng.cu -o GaussBlur
+  	nvcc GaussBlur_CUDA.cu lodepng.cu -o GaussBlur_CUDA
+  
+  To run: 
+	
+	./GaussBlur_CUDA
 
-  compile with lodepng.cu library file
+  Samir Husen - 2020 Dec 24
    
-
 *************************************************************************************/
 
 
@@ -21,7 +23,6 @@
 #include "lodepng.h" //library 
 
 #define CRYPT_TEST_COUNT 10
-
 
 __global__ void gaussian_blur_GPU(unsigned char * gpu_imageOuput, unsigned char * gpu_imageInput, unsigned int height, unsigned int width, unsigned int filter_size){
 

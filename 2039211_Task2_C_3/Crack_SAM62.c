@@ -8,22 +8,28 @@
 #include "time.h"
 #include <math.h>
 
-/******************************************************************************
+/**********************************************************************************
   Demonstrates how to crack an encrypted password using a simple
   "brute force" algorithm. Works on passwords that consist only of 3 uppercase
   letters and a 2 digit integer.
 
   Compile with:
   
-  cc CrackSAM62.c -lm -lcrypt -lpthread -o CrackSAM62
+  	cc CrackSAM62.c -lm -lcrypt -lpthread -o CrackSAM62
+
+  To run:
+	
+	./CrackSAM62
+
 
   Dr Kevan Buckley, University of Wolverhampton, 2018 Modified by Dr. Ali Safaa 2019
     
   Samir Husen 2020 Dec 23
 
- ******************************************************************************/
+ **********************************************************************************/
 
 int count = 0;     // A counter used to track the number of combinations explored so far
+
 
 void substr(char *dest, char *src, int start, int length){
 	memcpy(dest, src + start, length);
