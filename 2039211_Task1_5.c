@@ -1,10 +1,11 @@
-/**********************************************************************************
+/******************************************************************************************
 
 
-  The main function below show we can simulate the process of producing the C and B    values  
+The main function below show how we can simulate the process of producing the C and B values  
 
 
-***********************************************************************************/
+*******************************************************************************************/
+
 
 
 int main(int argc, char** argv)
