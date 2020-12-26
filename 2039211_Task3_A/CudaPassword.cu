@@ -10,7 +10,7 @@
 	
 	./CudaPassword
 
-  Samir Husen - 2020 Dec 25
+  Samir Husen - 2020 Dec 26
    
 *************************************************************************************/
 
@@ -20,7 +20,7 @@
 #define RAW_PASSWORD_SIZE  11
 #define DECRYPTED_PASSWORD_SIZE (4 + 1)
 
-#define CRYPT_TEST_COUNT 10
+#define CRYPT_TEST_COUNT 1
 
 __device__ void device_cudaCrypt(unsigned char* rawPassword, unsigned char* newPassword)
 {
